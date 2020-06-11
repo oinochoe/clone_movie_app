@@ -3,7 +3,7 @@ import Potato from './Potato';
 
 function Dragon(props) {
     console.log(props);
-    return <h4>Dragon</h4>;
+    return <h4>I like {props.fav}</h4>;
 }
 
 function App() {
