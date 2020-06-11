@@ -1,9 +1,9 @@
 import React from 'react';
 import Potato from './Potato';
 
-function Dragon(props) {
-    console.log(props);
-    return <h4>I like {props.fav}</h4>;
+// 구조 분해 할당으로 props 사용하면 . 연산자를 사용하지 않아도 됩니다.
+function Dragon({ fav }) {
+    return <h4>I like {fav}</h4>;
 }
 
 function App() {
