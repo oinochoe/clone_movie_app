@@ -13,14 +13,17 @@ function Food({ name, picture }) {
 
 const foodLike = [
     {
+        id: 1,
         name: 'Kimchi',
         image: 'http://aeriskitchen.com/wp-content/uploads/2020/06/ChapSsalTteok2_01-.jpg',
     },
     {
+        id: 2,
         name: 'sunpong',
         image: 'http://aeriskitchen.com/wp-content/uploads/2020/05/Cucumber_and_Crab_Stick_Salad_01-.jpg',
     },
     {
+        id: 3,
         name: 'bibimp',
         image: 'http://aeriskitchen.com/wp-content/uploads/2020/05/Spicy_Tiny_Anchovy_Side_01-.jpg',
     },
@@ -31,7 +34,7 @@ function App() {
         <div className='App'>
             안녕 <Potato />
             {foodLike.map((dish) => (
-                <Food name={dish.name} picture={dish.image} />
+                <Food key={dish.id} name={dish.name} picture={dish.image} />
             ))}
         </div>
     );
