@@ -25,14 +25,19 @@ const foodLike = [
         image: 'http://aeriskitchen.com/wp-content/uploads/2020/05/Spicy_Tiny_Anchovy_Side_01-.jpg',
     },
 ];
+/*
+function renderFood(dish) {
+    return <Food name={dish.name} picture={dish.image} />;
+} */
+
+const renderFood = (dish) => <Food name={dish.name} picture={dish.image} />;
 
 function App() {
+    console.log(foodLike.map(renderFood));
     return (
         <div className='App'>
             안녕 <Potato />
-            {foodLike.map((dish) => (
-                <Food name={dish.name} picture={dish.image} />
-            ))}
+            {foodLike.map(renderFood)}
         </div>
     );
 }
