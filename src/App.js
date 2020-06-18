@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Potato from './Potato';
 
 // 구조 분해 할당으로 props 사용하면 . 연산자를 사용하지 않아도 됩니다.
-function Food({ name, picture }) {
+function Food({ name, picture, rating }) {
     return (
         <div>
-            <h4>I like {name}</h4>
+            <h2>I like {name}</h2>
+            <h4>{rating} / 5.0</h4>
             <img src={picture} alt={name} />
         </div>
     );
@@ -37,10 +39,15 @@ function App() {
         <div className='App'>
             안녕 <Potato />
             {foodLike.map((dish) => (
-                <Food key={dish.id} name={dish.name} picture={dish.image} />
+                <Food key={dish.id} name={dish.name} picture={dish.image} rating={dish.rating} />
             ))}
         </div>
     );
 }
+Food.propTypes = {
+    name: PropTypes.string.isRequired,
+    picture: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+};
 
 export default App;
