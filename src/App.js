@@ -6,7 +6,7 @@ function Food({ name, picture }) {
     return (
         <div>
             <h4>I like {name}</h4>
-            <img src={picture} alt='' />
+            <img src={picture} alt={name} />
         </div>
     );
 }
